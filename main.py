@@ -5,11 +5,11 @@ try:
     commands_functions = {
         1: methods.addStudent,
         2: methods.viewStudent,
-        # 3: methods.searchStudent,
-        # 4: methods.updateStudentDetails,
+        3: methods.searchStudent,
+        4: methods.updateStudentDetails,
         5: methods.deleteStudentById,
-        # 6: file_methods.saveToFile,
-        # 7: file_methods.loadFromFile
+        6: file_methods.saveToFile,
+        7: file_methods.loadFromFile
     }
 
     print("*" * 43)
