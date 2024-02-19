@@ -5,11 +5,11 @@ try:
     commands_functions = {
         1: methods.addStudent,
         2: methods.viewStudent,
-        3: methods.searchStudent,
-        4: methods.updateStudentDetails,
+        # 3: methods.searchStudent,
+        # 4: methods.updateStudentDetails,
         5: methods.deleteStudentById,
-        6: file_methods.saveToFile,
-        7: file_methods.loadFromFile
+        # 6: file_methods.saveToFile,
+        # 7: file_methods.loadFromFile
     }
 
     print("*" * 43)
@@ -26,25 +26,23 @@ try:
               "\n7. Load from File"
               "\n8. Exit")
 
-        command = int(input("Enter your command: "))
+        try:
+            command = int(input("Enter your command (use numbers 1 to 8): "))
+        except ValueError:
+            print("Invalid input. Please enter a valid command.")
+            continue
 
-        if command in commands_functions.keys():
-            commands_functions[command]()
+        try:
+            if command == 8:
+                print("Exiting program")
+                break
+            elif command in commands_functions:
+                commands_functions[command]()
+            else:
+                print("Invalid command, Enter numbers 1 to 8.")
+        except KeyError:
+            print("Command function not found.")
 
-        elif command == 8:
-            print("Exiting program")
-            break
-        else:
-            print("Invalid command.")
 
-
-except ValueError as e:
-    print(f"\nError: {e}")
-except IndexError as e:
-    print(f"\nError: {e}")
-except TypeError as e:
-    print(f"\nError: {e}")
-except KeyError as e:
-    print(f"\nError: {e}")
 except KeyboardInterrupt:  # to handle user interruption
     print("\nProgram interrupted by user.")

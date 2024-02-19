@@ -49,7 +49,16 @@ def deleteStudentById():
 
     global students
 
-    student_id = int(input("Enter ID of student to delete: "))
+    if not students:
+        print("There are no students to delete.")
+        return
+
+    try:
+        student_id = int(input("Enter ID of student to delete: "))
+    except ValueError:
+        print("Invalid input. Please enter a valid integer for the student ID.")
+        return
+
     found = False
 
     for student in students:
