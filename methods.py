@@ -1,3 +1,4 @@
+import error_handling
 students = list()
 id = 0
 def addStudent():
@@ -5,11 +6,11 @@ def addStudent():
     global id
     id += 1
     print("Enter the details of the student: ")
-    name = input("Full name: ")
-    age = input("Age: ")
-    grade = input("Grade: ")
-    email = input("Email: ")
-    address = input("Address: ")
+    name = error_handling.handleString(input("Full name: "))
+    age = error_handling.handleSignal(input("Age: "))
+    grade = error_handling.handleSignal(input("Grade: "))
+    email = error_handling.handleEmail(input("Email: "))
+    address = error_handling.handleString(input("Address: "))
     student = {
         "Name": name,
         "Age": age,
