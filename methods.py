@@ -33,6 +33,7 @@ def viewStudent():
 
 
 def searchStudent():
+    """ method search for a student by name or id in the temp database"""
     global students
     student_id = 0
     if not students:
@@ -59,14 +60,13 @@ def searchStudent():
                 print(f"{key}: {value}")
                 found = True
             break
-        # elif student['ID'] != student_id or student['Name'] != student_name:
-        #     print("There is No Student With This Information Please CHECK And Write Correct Information")
 
     if not found:
         print(f" SORRY! Student was NOT found")
 
 
 def updateStudentDetails():
+    """ update student details method by ID , it can update all student details or One student detail """
     global students
 
     if not students:
