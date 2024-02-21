@@ -38,7 +38,7 @@ try:
             elif command in commands_functions:
                 commands_functions[command]()
             else:
-                print("Invalid command, Enter numbers 1 to 9.")
+                print("Invalid command, Enter numbers 1 to 8.")
         except KeyError:
             print("Command function not found.")
 
