@@ -34,6 +34,7 @@ def viewStudent():
 
 def searchStudent():
     global students
+    student_id = 0
 
     if not students:
         print("There are no students to search for.")
@@ -55,10 +56,15 @@ def searchStudent():
     for student in students:
         if student['ID'] == student_id or student['Name'] == student_name:
             print(f"The student was found Successfully ")
+            print("\t\t\" The Student Info\"" )
+            print("\n\t\t==================")
             for key, value in student.items():
                 print(f"{key}: {value}")
                 found = True
             break
+        elif student['ID'] != student_id or student['Name'] != student_name:
+            print("There is No Student With This Information Please CHECK And Write Correct Information")
+
 
     if not found:
         print(f" SORRY! Student was NOT found")
@@ -66,6 +72,7 @@ def searchStudent():
 
 def updateStudentDetails():
     global students
+    global student_id
 
     if not students:
         print("There are no students to update.")
@@ -99,6 +106,15 @@ def updateStudentDetails():
                     "Address": address
                 }
                 students.insert(index, student)
+                print("\n\t\"The New Student Details Has Successfully Updated To\"")
+                for student in students:
+                    print("=============================================================")
+                    for key, value in student.items():
+                        print(f"{key}: {value}")
+                print("=============================================================")
+                break
+
+
             elif update_type == 2:
                 update_by_value = input("Enter your command (choose number of update value you want to update): "
                                         "\n\t 1.Name"
@@ -123,7 +139,7 @@ def updateStudentDetails():
                     address = error_handling.handleString(input("Address: "))
                     student['Address'] = address
                 else:
-                    print("Invalid command, Enter numbers 1 to 5.")
+                    print("Invalid command, Please Enter Number from 1 to 5.")
 
 
 def deleteStudentById():
