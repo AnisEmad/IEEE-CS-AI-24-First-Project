@@ -41,7 +41,7 @@ The system implements error handling for various scenarios to enhance user exper
 1. Clone the repository:
 
     ```bash
-    git clone [https://github.com/AnisEmad/IEEE-CS-AI-24-First-Project.git]
+    git clone https://github.com/AnisEmad/IEEE-CS-AI-24-First-Project.git
     ```
 
 2. Navigate to the project directory:
@@ -53,7 +53,7 @@ The system implements error handling for various scenarios to enhance user exper
 3. Run the application:
 
     ```bash
-    [python3 main.py]
+    python3 main.py
     ```
 
 ## Contributions
