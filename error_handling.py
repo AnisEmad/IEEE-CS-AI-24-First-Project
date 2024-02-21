@@ -38,3 +38,4 @@ def isEmail(email):
 def handleEmail(email):
     while not isEmail(email):
         email = input("Input must be in email form\n")
+    return email

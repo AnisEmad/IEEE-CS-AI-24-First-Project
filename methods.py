@@ -1,6 +1,8 @@
 import error_handling
 students = list()
 id = 0
+
+
 def addStudent():
     """ method used for adding a student to a temproray list of dicts """
     global id
@@ -48,7 +50,7 @@ def deleteStudentById():
     None
     """
 
-    global students
+    #global students
 
     if not students:
         print("There are no students to delete.")
@@ -73,4 +75,54 @@ def deleteStudentById():
     else:
         print("Student not found")
 
+
+def searchStudent():
+    print("")
+
+
+def updateStudentDetails():
+    print("")
+
+
+def loadFromFile():
+    file_list=''   # to store content of file 
+    with open("database.txt","r") as file:
+        file_list=file.read()
+        file_list=eval(file_list) # to convert str to tuple or list
         
+    for i in file_list:   # to rem a dublicated value in list
+        if i not in students:
+            students.append(i)
+        else:
+            continue
+
+        print(file.closed)
+
+
+def saveToFile():
+    print(students)
+    with open("database.txt","w") as file:
+        file.write(str(students))
+
+
+def showToRead():
+    num_of_student=0
+    with open("database.txt","w") as file:
+        
+        for student in students:
+            file.write(f"\n===========================Student {num_of_student}================================== \n\n")
+            
+            for key, value in student.items():
+                file.write(f"{key}:  {value} \n")
+                          
+            num_of_student+=1
+    ending = input("press to enter if u ending read from file : ")
+    with open("database.txt", "w") as file:
+        file.truncate(0)  # Truncate the file to remove all data to add avaluable data
+    saveToFile()
+
+
+
+
+#    ┌───────────┐ │ └ ┘  
+

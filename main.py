@@ -1,5 +1,4 @@
 import methods
-import file_methods
 
 try:
     commands_functions = {
@@ -8,8 +7,9 @@ try:
         3: methods.searchStudent,
         4: methods.updateStudentDetails,
         5: methods.deleteStudentById,
-        6: file_methods.saveToFile,
-        7: file_methods.loadFromFile
+        6: methods.saveToFile,
+        7: methods.loadFromFile,
+        8: methods.showToRead
     }
 
     print("*" * 43)
@@ -24,22 +24,23 @@ try:
               "\n5. Delete student"
               "\n6. Save to File"
               "\n7. Load from File"
-              "\n8. Exit")
+              "\n8. save to read"
+              "\n9. Exit")
 
         try:
-            command = int(input("Enter your command (use numbers 1 to 8): "))
+            command = int(input("Enter your command (use numbers 1 to 9): "))
         except ValueError:
             print("Invalid input. Please enter a valid command.")
             continue
 
         try:
-            if command == 8:
+            if command == 9:
                 print("Exiting program")
                 break
             elif command in commands_functions:
                 commands_functions[command]()
             else:
-                print("Invalid command, Enter numbers 1 to 8.")
+                print("Invalid command, Enter numbers 1 to 9.")
         except KeyError:
             print("Command function not found.")
 
