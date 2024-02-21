@@ -185,7 +185,6 @@ def loadFromFile():
                     students.append(i)
                 else:
                     continue  
-        print(file.closed)
 
 def saveToFile():
     
