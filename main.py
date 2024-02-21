@@ -26,7 +26,7 @@ try:
               "\n8. Exit")
 
         try:
-            command = int(input("Enter your command (use numbers 1 to 9): "))
+            command = int(input("Enter your command (use numbers 1 to 8): "))
         except ValueError:
             print("Invalid input. Please enter a valid command.")
             continue

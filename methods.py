@@ -186,7 +186,6 @@ def loadFromFile():
                 else:
                     continue  
         print(file.closed)
-        
 
 def saveToFile():
     
@@ -198,20 +197,4 @@ def saveToFile():
                    file.write(f", \n{str(students[i])}")
             else:
                 file.write(f"{str(students[i])}")
-            
 
-def showToRead():
-    num_of_student=0
-    with open("database.txt","w") as file:
-        
-        for student in students:
-            file.write(f"\n===========================Student {num_of_student}================================== \n\n")
-            
-            for key, value in student.items():
-                file.write(f"{key}:  {value} \n")
-                          
-            num_of_student+=1
-    ending = input("press to enter if u ending read from file : ")
-    with open("database.txt", "w") as file:
-        file.truncate(0)  # Truncate the file to remove all data to add avaluable data
-    saveToFile()
