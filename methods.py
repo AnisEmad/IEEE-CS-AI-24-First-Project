@@ -27,6 +27,9 @@ def addStudent():
 
 def viewStudent():
     """ method prints all the students in the temp database """
+    if len(students) == 0:
+        print("There is no studen to view.")
+        return
     for student in students:
         print("=============================================================")
         for key, value in student.items():
