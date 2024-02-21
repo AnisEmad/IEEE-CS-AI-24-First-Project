@@ -1,6 +1,6 @@
 # Student Database Management System
 
-This project is a simple Student Database Management System that allows users to perform various operations related to student information. It is implemented in [insert programming language here].
+This project is a simple Student Database Management System that allows users to perform various operations related to student information.
 
 ## Features
 
@@ -41,30 +41,29 @@ The system implements error handling for various scenarios to enhance user exper
 1. Clone the repository:
 
     ```bash
-    git clone [repository_url]
+    git clone [https://github.com/AnisEmad/IEEE-CS-AI-24-First-Project.git]
     ```
 
 2. Navigate to the project directory:
 
     ```bash
-    cd student-database-management-system
+    cd IEEE-CS-AI-24-First-Project
     ```
 
 3. Run the application:
 
     ```bash
-    [insert command to run the application]
+    [python3 main.py]
     ```
 
 ## Contributions
 
-Contributions are welcome! If you have any ideas for improvement or new features, feel free to open an issue or create a pull request.
-
-## License
-
-This project is licensed under the [insert license name] License - see the [LICENSE.md](LICENSE.md) file for details.
+- Salma Osama
+- Anis Emad
+- Rawan Hatem
+- Abdelfattah Zakaria
 
 ## Acknowledgments
 
-Special thanks to [insert names or organizations] for their contributions or inspiration.
+Special thanks to IEEE for their inspiration.
 
