@@ -40,7 +40,7 @@ def viewStudent():
 def searchStudent():
     """ method search for a student by name or id in the temp database"""
     global students
-    student_id = 0
+
     if not students:
         print("There are no students to search for.")
         return
@@ -53,11 +53,11 @@ def searchStudent():
         print("Invalid input. Please enter a valid integer for the student ID.")
         return
 
-    search_value = input(f"Enter {search_by}: ")
+    search_value = input(f"Enter {search_by}: ").strip()
     found = False
 
     for student in students:
-        if  student['ID'] == int(search_value) or student['Name'] == search_value:
+        if student['ID'] == int(search_value) or student['Name'] == search_value:
             print(f"The student was found Successfully ")
             print("\t\t\" The Student Info\"" )
             print("\t\t==================")
@@ -155,8 +155,7 @@ def deleteStudentById():
     Returns:
     None
     """
-
-    #global students
+    global students
 
     if not students:
         print("There are no students to delete.")
@@ -180,14 +179,6 @@ def deleteStudentById():
         print("Student deleted successfully")
     else:
         print("Student not found")
-
-
-def searchStudent():
-    print("")
-
-
-def updateStudentDetails():
-    print("")
 
 
 def loadFromFile():
