@@ -9,7 +9,6 @@ try:
         5: methods.deleteStudentById,
         6: methods.saveToFile,
         7: methods.loadFromFile,
-        8: methods.showToRead
     }
 
     print("*" * 43)
@@ -24,8 +23,7 @@ try:
               "\n5. Delete student"
               "\n6. Save to File"
               "\n7. Load from File"
-              "\n8. save to read"
-              "\n9. Exit")
+              "\n8. Exit")
 
         try:
             command = int(input("Enter your command (use numbers 1 to 9): "))
@@ -34,7 +32,7 @@ try:
             continue
 
         try:
-            if command == 9:
+            if command == 8:
                 print("Exiting program")
                 break
             elif command in commands_functions:
