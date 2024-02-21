@@ -76,12 +76,6 @@ def deleteStudentById():
         print("Student not found")
 
 
-def searchStudent():
-    print("")
-
-
-def updateStudentDetails():
-    print("")
 
 
 def loadFromFile():
@@ -90,17 +84,15 @@ def loadFromFile():
         file_list=file.read()
         file_list=eval(file_list) # to convert str to tuple or list
         
-    for i in file_list:   # to rem a dublicated value in list
-        if i not in students:
-            students.append(i)
-        else:
-            continue
-
         print(file.closed)
+    for i in file_list:   # to rem a dublicated value in list
+            if i not in students:
+                students.append(i)
+            else:
+                continue
 
 
 def saveToFile():
-    print(students)
     with open("database.txt","w") as file:
         file.write(str(students))
 
@@ -120,9 +112,3 @@ def showToRead():
     with open("database.txt", "w") as file:
         file.truncate(0)  # Truncate the file to remove all data to add avaluable data
     saveToFile()
-
-
-
-
-#    ┌───────────┐ │ └ ┘  
-
