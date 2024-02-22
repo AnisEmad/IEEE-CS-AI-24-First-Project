@@ -1,11 +1,9 @@
 import error_handling
 students = list()
-id = 0
-
 
 def addStudent():
     """ method used for adding a student to a temproray list of dicts """
-    global id
+    id = max([student["ID"] for student in students]) if students else 0
     id += 1
     print("Enter the details of the student: ")
     name = error_handling.handleString(input("Full name: "))
@@ -57,7 +55,7 @@ def searchStudent():
     found = False
 
     for student in students:
-        if student['ID'] == int(search_value) or student['Name'] == search_value:
+        if str(student['ID']) == search_value or student['Name'] == search_value:
             print(f"The student was found Successfully ")
             print("\t\t\" The Student Info\"" )
             print("\t\t==================")
@@ -188,11 +186,12 @@ def loadFromFile():
         if file_list=='[]':
             print("file is empty :(")
         else:
-            file_list=eval(file_list) # to convert str to tuple or list
+            file_list=eval(file_list) # to convert str to list
 
-            for i in file_list:   # to rem a dublicated value in list
-                if i not in students:
-                    students.append(i)
+            for student in file_list:   # to rem a dublicated value in list
+                student["ID"] = int(student.get("ID", 0))
+                if student not in students:
+                    students.append(student)
                 else:
                     continue
 
